@@ -1,0 +1,56 @@
+
+body{
+  text-align: center;
+  background-image: url("New-Background-02.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+
+
+h1 {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+
+h2 {
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+
+.postcard {
+  height: 400px;
+  width: 700px;
+  border: white 7px solid ;
+  float: left;
+}
+
+
+.dzLogo {
+  height: 80px;
+  width: 140px;
+  float: left;
+  position: relative;
+  top: 120px;
+  left: -715px;
+
+
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+   background-color: white;
+  font-size: 16px;
+}
+
+
