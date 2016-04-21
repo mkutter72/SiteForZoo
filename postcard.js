@@ -21,21 +21,39 @@ $(document).ready(function () {
 
 
 
+
   $('#twitterUpload').on('click',function (e){
     e.preventDefault();
     OAuth.initialize('-wTpkEkqzYX2b5EcW8-2pYzKuC0');
 
     OAuth.popup('twitter').done(function(twitter) {
       //make API calls with `twitter`
-        twitter.post('/1.1/statuses/update.json', {
+       twitter.post('https://upload.twitter.com/1.1/media/upload.json', {
           data: {
-            status: "mini postcard from the zoo again",
-            media_ids: '722900531430170624'
-              }});
+             media: imageData
+             }
+           }).done(function(data) {
+              //todo with data
+              var str = JSON.stringify(data, null, 2);
+              console.log("Success\n" + str);
+
+              // twitter.post('/1.1/statuses/update.json', {
+              //   data: {
+              //     status: "mini postcard from the zoo again",
+              //     media_ids: '722900531430170624'
+              //       }});
+
+
             }).fail(function(err) {
+            //todo with err
+              var errorTxt = JSON.stringify(e, null, 2)
+              console.log("Error\n" + errorTxt);
+          });
+
+    }).fail(function(err) {
             //todo when the OAuth flow failed
-            console.log("failed:   "+ err);
-        });
+            console.log("popup failed:   "+ err);
+    });
 
     alert("Uploading Postcard to Twitter");
 
