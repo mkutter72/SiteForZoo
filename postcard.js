@@ -34,7 +34,7 @@ $(document).ready(function () {
              }
            }).done(function(data) {
               //todo with data
-              var media_str = data[media_id_string];
+              var media_str = data["media_id_string"];
               var str = JSON.stringify(data, null, 2);
               console.log("Success\n" + str + "----" + media_str);
 
