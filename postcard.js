@@ -34,14 +34,15 @@ $(document).ready(function () {
              }
            }).done(function(data) {
               //todo with data
+              var media_str = data[media_id_string];
               var str = JSON.stringify(data, null, 2);
-              console.log("Success\n" + str);
+              console.log("Success\n" + str + "----" + media_str);
 
-              // twitter.post('/1.1/statuses/update.json', {
-              //   data: {
-              //     status: "mini postcard from the zoo again",
-              //     media_ids: '722900531430170624'
-              //       }});
+              twitter.post('/1.1/statuses/update.json', {
+                data: {
+                  status: "My visit to the Detroit Zoo",
+                  media_ids: media_str
+                    }});
 
 
             }).fail(function(err) {
