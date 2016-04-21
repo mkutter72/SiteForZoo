@@ -35,30 +35,33 @@ $(document).ready(function () {
            }).done(function(data) {
               //todo with data
               var media_str = data["media_id_string"];
-              var str = JSON.stringify(data, null, 2);
-              console.log("Success\n" + str + "----" + media_str);
 
               twitter.post('/1.1/statuses/update.json', {
                 data: {
-                  status: "My visit to the Detroit Zoo",
-                  media_ids: media_str
-                    }});
-
+                        status: "My visit to the Detroit Zoo",
+                        media_ids: media_str
+                      }
+                  }).done(function(data) {
+                        alert("Postcard upload to Twitter complete");
+                  }).fail(function(err) {
+                      var errorTxt = JSON.stringify(err, null, 2)
+                      console.log("Error\n" + errorTxt);
+                      alert("Upload failed");
+                  });
 
             }).fail(function(err) {
             //todo with err
-              var errorTxt = JSON.stringify(e, null, 2)
+              var errorTxt = JSON.stringify(err, null, 2)
               console.log("Error\n" + errorTxt);
+              alert("Upload failed");
           });
 
     }).fail(function(err) {
-            //todo when the OAuth flow failed
-            console.log("popup failed:   "+ err);
+        //todo when the OAuth flow failed
+        console.log("popup failed:   "+ err);
+        alert("Upload failed");
     });
 
-    alert("Uploading Postcard to Twitter");
-
     $('#twitterUpload').blur();
-
   });
 });
