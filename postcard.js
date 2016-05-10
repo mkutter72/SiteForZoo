@@ -18,10 +18,6 @@ $(document).ready(function () {
   });
 
 
-
-
-
-
   $('#twitterUpload').on('click',function (e){
     e.preventDefault();
     OAuth.initialize('-wTpkEkqzYX2b5EcW8-2pYzKuC0');
