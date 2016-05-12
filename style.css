@@ -61,15 +61,6 @@ h2 {
   left: -1%;
 }
 
-button {
-  height: 40px;
-  width: 120px;
-  border-radius: 10px;
-  background-color: white;
-  font-size: 16px;
-}
-
-
 
 #twitterUpload {
   float: right;
@@ -81,3 +72,6 @@ button {
 }
 
 
+#zooElements {
+    max-width: 1000px;
+}
