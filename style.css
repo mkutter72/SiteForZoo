@@ -29,6 +29,7 @@ h2 {
   position: relative;
   float: right;
   left: -6%;
+  max-width: 600px;
 }
 
 .postcard {
