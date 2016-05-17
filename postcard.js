@@ -21,7 +21,8 @@ $(document).ready(function () {
 
   $('#twitterUpload').on('click',function (e){
     e.preventDefault();
-    OAuth.initialize('-wTpkEkqzYX2b5EcW8-2pYzKuC0');
+//    OAuth.initialize('-wTpkEkqzYX2b5EcW8-2pYzKuC0');
+    OAuth.initialize('3TIpo07N1KfQTivxD61KRgKlft4');
 
     OAuth.popup('twitter').done(function(twitter) {
       //make API calls with `twitter`
